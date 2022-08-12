@@ -31,6 +31,7 @@ import {
   QueryClientProvider
 } from "@tanstack/react-query";
 import useList from "../pages/api/algorandRequest";
+import Image from "next/image";
 
 type Props = {
   items: Algorand[];
@@ -48,10 +49,21 @@ function List() {
   // Queries
   // const query = useQuery(["asalists"], asalist);
   console.log(data);
+
+  const algo = data?.filter(
+    (searchRes) =>
+      searchRes.name.toLowerCase().includes("Algo".toLowerCase()) &&
+      searchRes.logo !== null
+  );
   return (
     <>
-      {data?.map((list) => (
-        <div key={list.assetId}>{list.name}</div>
+      {algo?.map((list) => (
+        <div key={list.assetId}>
+          <h1>{list.name} </h1>
+          <Image src={list?.logo || ""} width={130} height={130} />
+          <p>{list.assetId}</p>
+          <p>{list.available}</p>
+        </div>
       ))}
     </>
   );

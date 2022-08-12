@@ -5,7 +5,8 @@
     "build": "next build",
     "start": "next start",
     "type-check": "tsc",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "jest --watch"
   },
   "dependencies": {
     "@tanstack/react-query": "^4.0.10",
