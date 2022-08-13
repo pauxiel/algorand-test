@@ -61,7 +61,7 @@ function List() {
 {status === "loading" ? (
           "Loading..."
         ) : status === "error" ? (
-          <span>Error: {error.message}</span>
+          <span>Error</span>
         ) : (
 
           <>
