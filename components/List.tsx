@@ -57,27 +57,28 @@ function List() {
   );
   return (
     <>
-
-{status === "loading" ? (
-          "Loading..."
-        ) : status === "error" ? (
-          <span>Error</span>
-        ) : (
-
-          <>
-           {algo?.map((list) => (
-        <div key={list.assetId}>
-          <h1 className="text-3xl">{list.name} </h1>
-          <Image src={list?.logo || ""} width={130} height={130} />
-          <p>{list.assetId}</p>
-          <p>{list.available === true ? "available" : "not available"}</p>
+      {status === "loading" ? (
+        "Loading..."
+      ) : status === "error" ? (
+        <span>Error</span>
+      ) : (
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5 pl-10 pr-10">
+          {algo?.map((list) => (
+            <div className="border-[#B7BECC] border rounded-lg" key={list.assetId}>
+              <div className="py-2 px-2 text-center">
+                <Image
+                  className="bg-cover bg-no-repeat bg-center"
+                  src={list?.logo || ""}
+                  width={60}
+                  height={60}
+                />
+                <p>{list.name}</p>
+                <p>{list.available === true ? "available" : "not available"}</p>
+              </div>
+            </div>
+          ))}
         </div>
-      ))}
-
-          </>
-
-        )}
-     
+      )}
     </>
   );
 }
