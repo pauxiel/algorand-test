@@ -57,14 +57,27 @@ function List() {
   );
   return (
     <>
-      {algo?.map((list) => (
+
+{status === "loading" ? (
+          "Loading..."
+        ) : status === "error" ? (
+          <span>Error: {error.message}</span>
+        ) : (
+
+          <>
+           {algo?.map((list) => (
         <div key={list.assetId}>
-          <h1>{list.name} </h1>
+          <h1 className="text-3xl">{list.name} </h1>
           <Image src={list?.logo || ""} width={130} height={130} />
           <p>{list.assetId}</p>
-          <p>{list.available}</p>
+          <p>{list.available === true ? "available" : "not available"}</p>
         </div>
       ))}
+
+          </>
+
+        )}
+     
     </>
   );
 }

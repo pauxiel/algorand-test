@@ -1,4 +1,5 @@
 import Link from "next/link";
+// import "../styles/globals.css";
 import React from "react";
 import Layout from "../components/Layout";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
