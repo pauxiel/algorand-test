@@ -29,7 +29,7 @@ const IndexPage = () => {
   // const [queryClient] = React.useState(() => new QueryClient());
   return (
     <QueryClientProvider client={queryClient}>
-      <Layout title="Home | Next.js + TypeScript Example">
+      <Layout title="List of Algorand Standard Asset on Asalytics">
         <List />
       </Layout>
     </QueryClientProvider>
