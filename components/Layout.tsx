@@ -23,7 +23,7 @@ const Layout = ({ children, title = "This is the default title" }: Props) => (
             <Image src={Logo} />
           </div>
 
-          <button className="inline-block py-5 px-11 bg-sky-500 bg-black text-white rounded-lg ">
+          <button className="inline-block py-5 px-11 bg-black text-white rounded-lg ">
             ANALYZE ASAS
           </button>
         </div>
@@ -36,7 +36,7 @@ const Layout = ({ children, title = "This is the default title" }: Props) => (
       </div>
     </header>
     {children}
-    <footer>{/* <span>Im here to stay (Footer)</span> */}</footer>
+    <footer>{/* created  by obayuwana paul(Footer)</span> */}</footer>
   </div>
 );
 
